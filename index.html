@@ -1,113 +1,85 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesSignIn.css">
 
-<html>
-  <head>
-    <title> Brito - DoWhile 2021</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <div class="avatar">
-          <span>
-            <img src="images/build.svg" alt="Selo Rocketseat" />
-          </span>
-          <img
-            src="https://lorempixel.com/185/185/people/"
-            alt="Foto pessoal"
-            id="userImage"
-          />
-        </div>
-
-        <h1 id="userName"></h1>
-        <a href="https://github.com/brito" target="_blank" id="userGithub">
-          <img src="images/github.svg" alt="ícone github" />
-          <spam id="userLogin">userName</spam>
-          </a
-        >
-
-        <p id="userBio"></p>
-
-        <ul id="socialLinks">
-          <li class="youtube">
-            <a href="https://youtube.com/" target="_blank">
-              <img src="images/youtube.svg" alt="ícone youtube" />
-            </a>
-          </li>
-          <li class="facebook">
-            <a href="https://facebook.com/brito" target="_blank">
-              <img src="images/facebook.svg" alt="ícone facebook" />
-            </a>
-          </li>
-          <li class="instagram">
-            <a href="https://instagram.com/brito" target="_blank">
-              <img src="images/instagram.svg" alt="ícone instagram" />
-            </a>
-          </li>
-          <li class="twitter">
-            <a href="https://twitter.com/brito" target="_blank">
-              <img src="images/twitter.svg" alt="ícone twitter" />
-            </a>
-          </li>
-        </ul>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="containerLogo">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo DoWhile">
       </div>
-    </main>
+  </div>
+  </header>
 
-    <script>
-      
- 
-      
-      
-      const LinksSocialMedia = {
-        github: 'viniscode',
-        youtube: 'livesdovini',
-        facebook: 'viniciuskaua.rodrigues',
-        instagram: 'rodriguesvini.dev',
-        twitter: 'viniRdev'
-      }
-
-      function changeSocialMediaLinks() {
-        for (let li of socialLinks.children) {
-          const social = li.getAttribute('class')
-
-          li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
-          
-        }
-      }
-
-      function getGitHubProfileInfo(){
-       const url = LinksSocialMedia.github
-
-       fetch(`https://api.github.com/users/${url}`)
-       .then(response => response.json())
-       .then(data => data)
-       .then(data => {
-        userName.innerHTML = data.name;
-        userBio.textContent = data.bio
-        userImage.src = data.avatar_url
-        userGithub.href = data.html_url
-        userLogin.textContent = data.login
-      }
-      )
-     }
-
-      // i = i + 1
-      // i++
-      
-      // ser humano 12345678910
-      //computador 0123456789
-      getGitHubProfileInfo()
-      changeSocialMediaLinks()
-      </script>
-  </body>
-  </html>
+  <main>
+    <div class="container">
+      <div class="messages">
+        <div class="message">
+          <p>Não vejo a hora de começar esse evento, com certeza vai ser o melhor de todos os tempos, vamooo pra cima! 🔥🔥</p>
+          <div class="user">
+            <div class="userImage">
+              <img src="https://github.com/diego3g.png" alt="Avatar github">
+            </div>
+          <p>Diego Fernandes</p>
+          </div>
+        </div>
+        
+        <div class="message">
+          <p>Esse vai ser simplesmente fantástico! Bora aprender tudo em relação a montagem de APIs GraphQL. Sem contar com as palestras e painéis.</p>
+          <div class="user">
+            <div class="userImage">
+              <img src="https://github.com/diego3g.png" alt="Avatar github">
+            </div>
+          <p>Diego Fernandes</p>
+          </div>
+        </div>
+        
+        <div class="message">
+          <p>Não vejo a hora de começar esse evento, com certeza vai ser o melhor de todos os tempos, vamooo pra cima! 🔥🔥</p>
+          <div class="user">
+            <div class="userImage">
+              <img src="https://github.com/diego3g.png" alt="Avatar github">
+            </div>
+          <p>Diego Fernandes</p>
+          </div>
+        </div>
   
+      </div>
+
+      <div class="signInDiv">
+
+        <div class="divContent">
+          <input type="text" placeholder="Coloque seu usuário do GitHub" id="githubUserName" name="githubUserName">
+          <a href="cardPage.html" onclick="catchGithubUserName()" id="signInButton">ENTRAR</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+
+    function catchGithubUserName(){
+      const userName = document.getElementById('githubUserName').value
+      localStorage.setItem('username', userName);
+      console.log(userName)
+    }
+
+  
+  </script>
+</body>
+</html>
