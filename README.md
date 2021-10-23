@@ -1,4 +1,4 @@
-### esse código foi desenvolvido na NLW Heat Origin
+### esse código foi desenvolvido na NLW Heat Origin da Rocketseat
 
 ## Mudanças feitas na aplicação
 - Adicionei uma pagina aonde o usuário coloca seu username do github 
