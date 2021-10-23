@@ -7,7 +7,7 @@
 - Depois de adicionado o username, o usuário é redirecionado para a página do cartão DoWhile
 - O cartão agora está personalizado com o nome do usuário, foto e link para o github.
 - O link para as redes sociais ainda estão estáticas. 
-- a validação do input ainda está sendo desenvolvida, se o usuário não colocar um nome vai dar erro
+- a validação do input ainda está sendo desenvolvida, se o usuário não colocar um nome, ou colocar um nome inválido, vai dar erro
 
 ## Clique [aqui]( https://viniscode.github.io/nlw-heat-origin/) para acessar o projeto
 ou cole esse link no seu navegador:  https://viniscode.github.io/nlw-heat-origin/
