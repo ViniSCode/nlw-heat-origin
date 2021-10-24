@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
 
-  <title>Document</title>
+  <title>Crachá NLW Heat</title>
 </head>
 <body>
   <header>
@@ -63,8 +63,10 @@
       <div class="signInDiv">
 
         <div class="divContent">
-          <input type="text" placeholder="Coloque seu usuário do GitHub" id="githubUserName" name="githubUserName">
-          <a href="cardPage.html" onclick="catchGithubUserName()" id="signInButton">ENTRAR</a>
+          <form  action="" id="signInForm">
+            <input type="text" placeholder="Coloque seu usuário do GitHub" id="githubUserName" name="githubUserName">
+            <input type="submit" id="signInButton"></input>
+          </form>
         </div>
       </div>
 
@@ -73,10 +75,30 @@
 
   <script>
 
+    const userName = document.getElementById('githubUserName').value
+    const form = document.getElementById('signInForm');
+    const input =  document.getElementById('githubUserName')
+
+    
+    
+    form.addEventListener('submit', (event) => {
+      const userName = document.getElementById('githubUserName').value
+      event.preventDefault();
+      if(!userName){
+        alert('Por Favor informe um usuário do Github');
+        input.focus();
+      }
+
+      else{
+        catchGithubUserName();
+        window.location.href = 'cardPage.html'
+      }
+    })
+    
     function catchGithubUserName(){
       const userName = document.getElementById('githubUserName').value
       localStorage.setItem('username', userName);
-      console.log(userName)
+      
     }
 
   

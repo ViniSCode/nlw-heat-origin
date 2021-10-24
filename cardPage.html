@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title> Brito - DoWhile 2021</title>
+    <title id="userNameTitle"></title> Brito - DoWhile 2021</title>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -66,6 +66,9 @@
       
       const getName = localStorage.getItem('username');
 
+      const userNameTitle = document.getElementById('userNameTitle');
+      userNameTitle.textContent = getName + ' - DoWhile 2021'
+
       const LinksSocialMedia = {
         github: getName,
         youtube: 'rocketseat',
@@ -94,7 +97,6 @@
         userImage.src = data.avatar_url
         userGithub.href = data.html_url
         userLogin.textContent = data.login
-        console.log(data)
       }
       )
      }

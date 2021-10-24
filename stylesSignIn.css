@@ -81,7 +81,7 @@ body {
 .signInDiv{
   background: url(images/modal.png) no-repeat;
   width: 500px;
-  height:1000px;
+  height:800px;
   background-size: cover;
   position: relative;
   bottom: 80px;
@@ -90,42 +90,18 @@ body {
 
 /*copiado*/
 
-.avatar {
-  width: 10rem;
-  margin: 11.5rem auto 0;
-  position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar span {
-  position: absolute;
-  top: -15px;
-  z-index: 1;
-}
-
-.avatar > img {
-  margin-top: -15rem;
-  width: 15rem;
-  height: 22.5rem;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-
-}
-
-.divContent{
+form{
   display: flex;
   flex-direction: column;
   width: 400px;
   margin: 0 auto;
   position: relative;
-  top: 42rem;
+  top: 39rem;
 }
+
 .divContent input{
-  width: 69%;
+  width: 80%;
   height: 50px;
   margin: 0 auto;
   font-weight: 400;
@@ -136,10 +112,6 @@ body {
 }
 
 #signInButton {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  
   background: #ffcd1e;
   text-align: none;
   text-decoration: none;
@@ -147,6 +119,12 @@ body {
   font-weight: bolder;
   margin:10px auto;
 
-  width: 280px;
-  height:50px
+  width: 81%;
+  height:50px;
+
+  cursor: pointer;
+  transition: filter .2s;
+}
+#signInButton:hover{
+  filter: brightness(.9);
 }
